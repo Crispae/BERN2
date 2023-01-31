@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
     $.ajaxSetup({
-        timeout: 5000,
+        timeout: 5000000, // Time out extended for handling late response from docker
         error: function(xhr){
             var textarea = document.getElementById("test_textarea");
             $(textarea).animate({'height': '2.4rem'}, 100);

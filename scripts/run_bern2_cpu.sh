@@ -15,8 +15,15 @@ nohup python multi_ner/ner_server.py \
 
 cd resources
 
+### Resolving error in GNorm
+cd GNormPlusJava/CRF
+./configure --prefix="$HOME"
+make
+make install
+
+cd ..
+
 # run gnormplus
-cd GNormPlusJava
 nohup java -Xmx16G -Xms16G -jar GNormPlusServer.main.jar 18895 >> ../../logs/nohup_gnormplus.out 2>&1 &
 cd ..
 
@@ -59,7 +66,7 @@ env "PATH=$PATH" nohup python -u server.py \
     --tmvar2_port 18896 \
     --no_cuda \
     --gene_norm_port 18888 \
-    --disease_norm_port 18892 \
+    --disease_norm_port 18892 \  ## Remove neuralNER
     --port 8888 \
     >> logs/nohup_bern2.out 2>&1 &
 
