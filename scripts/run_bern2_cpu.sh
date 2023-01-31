@@ -16,12 +16,8 @@ nohup python multi_ner/ner_server.py \
 cd resources
 
 ### Resolving error in GNorm
-cd GNormPlusJava/CRF
-./configure --prefix="$HOME"
-make
-make install
-
-cd ..
+cd GNormPlusJava
+bash Installation.sh
 
 # run gnormplus
 nohup java -Xmx16G -Xms16G -jar GNormPlusServer.main.jar 18895 >> ../../logs/nohup_gnormplus.out 2>&1 &
