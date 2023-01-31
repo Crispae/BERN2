@@ -66,7 +66,7 @@ env "PATH=$PATH" nohup python -u server.py \
     --tmvar2_port 18896 \
     --no_cuda \
     --gene_norm_port 18888 \
-    --disease_norm_port 18892 \  ## Remove neuralNER
+    --disease_norm_port 18892 \  
     --port 8888 \
     >> logs/nohup_bern2.out 2>&1 &
 
