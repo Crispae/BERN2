@@ -60,7 +60,6 @@ env "PATH=$PATH" nohup python -u server.py \
     --no_cuda \
     --gene_norm_port 18888 \
     --disease_norm_port 18892 \
-    --use_neural_normalizer \
     --port 8888 \
     >> logs/nohup_bern2.out 2>&1 &
 
